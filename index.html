@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function computerPlay()
+        {
+            let values = ['rock','paper','scissors'];
+            let index = Math.floor(Math.random()*values.length);
+            return values[index];
+        }
+        let userScore = 0;
+        let compScore = 0;
+
+        let playerSelection;
+        const computerSelection =computerPlay();
+        
+
+        function playRound(playerSelection,computerSelection)
+        {
+            
+
+            playerSelection = prompt('Seciminizi yapin');
+            console.log(`Seciminiz bu ${playerSelection}`);
+            console.log(`bilgisayarin secimi = ${computerSelection}`);
+            
+            
+            if(playerSelection === 'rock' && computerSelection === 'rock')
+            {
+                return 'its a tie';
+            }
+            else if(playerSelection === 'rock' && computerSelection === 'paper')
+            {
+                compScore++;
+               return 'paper beats rock you lose';
+               
+            }
+            else if(playerSelection === 'rock' && computerSelection === 'scissors')
+            {
+                userScore++;
+                return 'rock beats scissors you win';
+                
+            }
+
+            else if(playerSelection === 'paper' && computerSelection === 'rock')
+             {
+                userScore++;
+                return 'paper beats rock you win';
+                
+            }
+            else if(playerSelection === 'paper' && computerSelection === 'paper')
+            {
+               return 'its a tie';
+            }
+            else if(playerSelection === 'paper' && computerSelection === 'scissors')
+            {
+                compScore++;
+                return 'scissors beat paper you lose';
+                
+            }
+
+            else if(playerSelection === 'scissors' && computerSelection === 'rock')
+             {
+                compScore++;
+                return 'you lose';
+                
+            }
+            else if(playerSelection === 'scissors' && computerSelection === 'paper')
+            {
+                userScore++;
+               return 'you win';
+               
+            }
+            else if(playerSelection === 'scissors' && computerSelection === 'scissors')
+            {
+                return 'its a tie';
+            }
+            else
+            {
+              return 'please enter a valid object';
+            }
+            
+            
+        }
+       function game()
+       {
+           for(i =0;i <5;i++)
+           {
+               
+               console.log(playRound(playerSelection,computerSelection));
+               console.log('userScore',userScore);
+               console.log('compscore', compScore);
+
+           }
+           if(userScore>compScore)
+           {
+               console.log(`You win against the computer. Your score : ${userScore} Computers score : ${compScore}`);
+           }
+           else if(userScore < compScore)
+           {
+               console.log(`You lost against the computer. Your score : ${userScore} Computers score : ${compScore}`)
+           }
+           else if(userScore == compScore)
+           {
+               console.log('yanlis');
+           }
+
+       }
+            
+
+    </script>
+    
+</body>
+</html>
