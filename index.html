@@ -5,115 +5,74 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <script>
-        function computerPlay()
-        {
-            let values = ['rock','paper','scissors'];
-            let index = Math.floor(Math.random()*values.length);
-            return values[index];
-        }
-        let userScore = 0;
-        let compScore = 0;
+     
+<div class="main-header">
+    <h1>ROCK PAPER SCISSORS</h1>
+     <h2>Choose your selection</h2>
+     <h3>First to 5 wins</h3>
 
-        let playerSelection;
-        const computerSelection =computerPlay();
-        
+</div>
+<div class="play-area">
+    <div class="areas">
+        <img src="img/rock.jpg" alt="pic of a rock" id="rock">
+         <button class="selectionBtn" id="rockButton">Rock</button>
+    </div>
+    <div class="areas">
+        <img src="img/paper.jpg" alt="pic of a paper" id="paper">
+        <button class="selectionBtn" id="paperButton">Paper</button>
 
-        function playRound(playerSelection,computerSelection)
-        {
-            
+    </div>
+    <div class="areas">
+        <img src="img/scissors.jpg" alt="pic of a scissors" id="scissors">
+        <button class="selectionBtn" id="scissorsButton">Scissors</button>
 
-            playerSelection = prompt('Seciminizi yapin');
-            console.log(`Seciminiz bu ${playerSelection}`);
-            console.log(`bilgisayarin secimi = ${computerSelection}`);
-            
-            
-            if(playerSelection === 'rock' && computerSelection === 'rock')
-            {
-                return 'its a tie';
-            }
-            else if(playerSelection === 'rock' && computerSelection === 'paper')
-            {
-                compScore++;
-               return 'paper beats rock you lose';
-               
-            }
-            else if(playerSelection === 'rock' && computerSelection === 'scissors')
-            {
-                userScore++;
-                return 'rock beats scissors you win';
-                
-            }
-
-            else if(playerSelection === 'paper' && computerSelection === 'rock')
-             {
-                userScore++;
-                return 'paper beats rock you win';
-                
-            }
-            else if(playerSelection === 'paper' && computerSelection === 'paper')
-            {
-               return 'its a tie';
-            }
-            else if(playerSelection === 'paper' && computerSelection === 'scissors')
-            {
-                compScore++;
-                return 'scissors beat paper you lose';
-                
-            }
-
-            else if(playerSelection === 'scissors' && computerSelection === 'rock')
-             {
-                compScore++;
-                return 'you lose';
-                
-            }
-            else if(playerSelection === 'scissors' && computerSelection === 'paper')
-            {
-                userScore++;
-               return 'you win';
-               
-            }
-            else if(playerSelection === 'scissors' && computerSelection === 'scissors')
-            {
-                return 'its a tie';
-            }
-            else
-            {
-              return 'please enter a valid object';
-            }
-            
-            
-        }
-       function game()
-       {
-           for(i =0;i <5;i++)
-           {
-               
-               console.log(playRound(playerSelection,computerSelection));
-               console.log('userScore',userScore);
-               console.log('compscore', compScore);
-
-           }
-           if(userScore>compScore)
-           {
-               console.log(`You win against the computer. Your score : ${userScore} Computers score : ${compScore}`);
-           }
-           else if(userScore < compScore)
-           {
-               console.log(`You lost against the computer. Your score : ${userScore} Computers score : ${compScore}`)
-           }
-           else if(userScore == compScore)
-           {
-               console.log('yanlis');
-           }
-
-       }
-            
-
-    </script>
+    </div>
+    <button class="selectionBtn" id="resetButton">Reset The Game</button>
     
+
+</div>
+<div class="scoreArea">
+    <div class="scores" style="font-family: sans-serif;">
+        User Score:
+        <div id="userScore" style="display: inline;">0</div>
+
+    </div>
+    <div class="scores" style="font-family: sans-serif;">
+       Computer Score:
+        <div id="compScore" style="display: inline;">0</div>
+    </div>
+        
+</div>
+
+<div class="winnerArea">
+   <br><br>
+   Game Results:
+
+
+</div>
+
+<div id="myModal" class="modal">
+
+<div class="modal-content">
+    <span class="close">&times;</span>
+    <div class="innerText">
+    <h2 id="modalText">Some text in the Modal..</h2>
+    </div>
+  </div>
+
+</div>
+
+
+
+    
+        
+            
+
+    
+<script async src="script.js" ></script>
 </body>
 </html>
