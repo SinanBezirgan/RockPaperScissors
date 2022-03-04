@@ -1,0 +1,121 @@
+.main-header{
+
+    background-color: rgb(255, 255, 255);
+    height: 25vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.play-area{
+
+    background-color:rgb(255, 255, 255);
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    
+}
+#rock{
+
+    width: 150px;
+    max-height: 200px;
+}
+.areas{
+    display: flex;
+    flex-direction: column;
+    gap : 15px;
+    flex-basis: auto;
+    
+}
+.selectionBtn{
+    border-radius: 2px;
+    border-color: rgb(73, 73, 68);
+    max-width: 70%;
+    padding: 5px;
+    align-self: center;
+    width: 100%;
+    
+    
+}
+#paper{
+    width: 150px;
+    height: 100px;
+}
+#scissors{
+    width: 150px;
+    height: 100px;
+
+}
+.scoreArea{
+    display:flex ;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    height:25vh;
+    gap: 20px;
+}
+.winnerArea{
+    height: 10vh;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    
+}
+.hovering{
+    transform: scale(1.1);
+  border-color: #ffc600;
+  box-shadow: 0 0 1rem #ffc600;
+}
+.hoveringPics{
+    transform: scale(1.1);
+  border-color: #080703;
+  box-shadow: 0 0 1rem #94928c;
+}
+#resetButton{
+
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+    width: 10%;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
+  .close {
+    color: rgb(233, 30, 30);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    
+  }
+  .close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+.innerText{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
